@@ -17,6 +17,15 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+     public static $objectClasses =
+     [
+        'top',
+        'person',
+        'organizationalperson',
+        'user',
+    ];
+
     protected $fillable = [
         'name',
         'email',

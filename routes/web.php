@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LDAPController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,10 +27,11 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::post('/login', [LoginController::class,'login'])->name('login');
+Route::post('/login', [LDAPController::class,'login'])->name('login');
 
 Route::get('/signup', function () {
     return view('signup');
 });
 
 Route::post('/signup', [LoginController::class,'register'])->name('signup');
+Route::get('/test', [LDAPController::class,'test']);
